@@ -11,9 +11,6 @@
    
    $countrycode=$_POST["countrycode"];
 
-
-
-
    //for getting country
    
      // Initialize CURL:
@@ -30,19 +27,11 @@
    // Decode JSON response:
    $validationCountryResult = json_decode($json, true);
    
-   
-   
-   
-   
+  
    if ($_POST['mobileno'] !="") {
    
      $number=$countrycode.$phone_number;
 
-
-
-
-     
-   
    // Initialize CURL:
    
    $chs = curl_init('http://apilayer.net/api/validate?access_key='.$access_key.'&number='.$number.''); 
@@ -63,11 +52,6 @@
    $validationNumResult['country_code'];
    $validationNumResult['carrier'];
 
-
-
-
-
-
    if ($validationNumResult['error']['info'] !="") {
                 
 
@@ -78,8 +62,6 @@
            
            $valid="no";
    }
-   
-   
    
    }
    
